@@ -1,0 +1,16 @@
+.principal .title{
+    display: flex;
+    justify-content: center;
+    color: rgb(105, 105, 175);
+    margin-top: 10px;
+    margin-bottom: 4px;
+    border-radius: 5px;
+    border-color: black;
+}
+
+.principal .parrafo{
+    padding-top: 0;
+    display: flex;
+    justify-content: center;
+    color: red;
+}
