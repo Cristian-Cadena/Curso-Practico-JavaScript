@@ -1,7 +1,10 @@
+.principal {
+    background-color: rgb(157, 202, 229);
+}
 .principal .title{
     display: flex;
     justify-content: center;
-    color: rgb(105, 105, 175);
+    color: rgb(0, 0, 0);
     margin-top: 10px;
     margin-bottom: 4px;
     border-radius: 5px;
@@ -12,5 +15,22 @@
     padding-top: 0;
     display: flex;
     justify-content: center;
-    color: red;
+    color: rgb(0, 0, 0);
+    font-family: monospace;
+}
+
+.container {
+    display:grid;
+}
+
+.container .h2 {
+    display: inline-flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.container .imgc {
+    width: 40px;
+    height: 40px;
+    margin-left: 5px;
 }
