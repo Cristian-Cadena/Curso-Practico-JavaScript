@@ -19,18 +19,24 @@
     font-family: monospace;
 }
 
-.container {
+.title1 {
     display:grid;
-}
-
-.container .h2 {
-    display: inline-flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
 }
 
-.container .imgc {
-    width: 40px;
-    height: 40px;
-    margin-left: 5px;
+.title2 {
+    display:grid;
+    justify-content: center;
+    align-items: center;
 }
+
+.title3 {
+    display:grid;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
