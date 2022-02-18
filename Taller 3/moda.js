@@ -1,68 +1,34 @@
-// let lista = [100,200,500,400000000,300,12,1000,456];
-// //let lista = [-1, 48, 59, 8, 1, 5, 6, 20, 201, 84, 789, 3458, 87, 545, 211, 0];
-// let i = lista.length;
-// let lista1 = [];
+//const lista1 = [1,2,3,1,2,3,1,2,2,2,3,4,4,5];
 
-// for (i; i > 0; i--) {
-// let min = Math.min(lista);
-// let find = lista.indexOf(min);
-// lista1.push(min);
-// lista.splice(find, 1);
-// }
+function crearLista(lista) {
 
-//let lista1 = [100,200,500,400000000,300,12,1000,456];
-//var numbers = [4, 2, 5, 1, 3];
+    const lista1 = lista.sort(function(a, b) {
+        return a - b;
+        });
 
+    const lista1Count = {};
 
-function crearLista (lista) {
+    lista1.map (
 
-    const listaOrdenada = lista.sort(function(a, b) {
-    return a - b;
-    });
-    
-const mitadLista = parseInt(listaOrdenada.length / 2);
-
-let mediana;
-
-if (esPar(listaOrdenada.length)) {
-    const elemento1 = listaOrdenada [mitadLista];
-    const elemento2 = listaOrdenada [mitadLista - 1];
-
-    const elemento1y2 = calcularMediaAritmetica([elemento1, elemento2]);
-
-    mediana = elemento1y2;
-
-    return mediana;
-
-}
-else {
-    mediana = listaOrdenada[mitadLista];
-    return mediana;
-    }
-}
-
-function esPar (numerito) {
-
-    if (numerito%2 === 0) {
-        return true;
-    }
-    else {
-        return false;
-    }
-
-}
-
-
-function calcularMediaAritmetica(lista) {
-    
-    const sumaLista = lista.reduce(
-        function (valorAcumulado = 0, nuevoElemento) {
-            return valorAcumulado + nuevoElemento;
+    function (elemento){
+        if(lista1Count[elemento]){
+            //lista1Count [elemento] = lista1Count [elemento] + 1;
+            lista1Count [elemento] += 1;
         }
-    );
-    
-    const promedioLista = sumaLista / lista.length;
-    
-    return promedioLista;
-    
+        else {
+            lista1Count [elemento] = 1;
+        }
     }
+);
+
+const lista1Array = Object.entries(lista1Count).sort (
+    function(a,b){
+        return a[1]-b[1];
+    }
+)
+
+const moda = lista1Array[lista1Array.length - 1];
+
+return moda;
+
+}
