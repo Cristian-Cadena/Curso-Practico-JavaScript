@@ -13,15 +13,43 @@
 //let lista1 = [100,200,500,400000000,300,12,1000,456];
 //var numbers = [4, 2, 5, 1, 3];
 
-let lista1;
 
-function crearlista (lista1) {
+function crearLista (lista) {
 
-    lista1.sort(function(a, b) {
+    const listaOrdenada = lista.sort(function(a, b) {
     return a - b;
     });
-    console.log(lista1);
     
+const mitadLista = parseInt(listaOrdenada.length / 2);
+
+let mediana;
+
+if (esPar(listaOrdenada.length)) {
+    const elemento1 = listaOrdenada [mitadLista];
+    const elemento2 = listaOrdenada [mitadLista - 1];
+
+    const elemento1y2 = calcularMediaAritmetica([elemento1, elemento2]);
+
+    mediana = elemento1y2;
+
+    return mediana;
+
+}
+else {
+    mediana = listaOrdenada[mitadLista];
+    return mediana;
+    }
+}
+
+function esPar (numerito) {
+
+    if (numerito%2 === 0) {
+        return true;
+    }
+    else {
+        return false;
+    }
+
 }
 
 
@@ -39,30 +67,12 @@ function calcularMediaAritmetica(lista) {
     
     }
 
-const mitadLista1 = parseInt(lista1.length / 2);
 
-function esPar (numerito) {
 
-    if (numerito%2 === 0) {
-        return true;
-    }
-    else {
-        return false;
-    }
 
-}
 
-let mediana;
 
-if (esPar(lista1.length)) {
-    elemento1 = lista1 [mitadLista1];
-    elemento2 = lista1 [mitadLista1 - 1];
 
-    elemento1y2 = calcularMediaAritmetica([elemento1, elemento2]);
 
-    mediana = elemento1y2;
 
-}
-else {
-    mediana = lista1[mitadLista1];
-}
+
